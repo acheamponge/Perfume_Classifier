@@ -40,7 +40,7 @@ st.header("Perfume Classifier")
 
 st.image(image)
 
-st.body("Classification Model for Perfume")
+st.write("Classification Model for Perfume")
 
 uploaded_file = st.file_uploader("Choose an image file", type="jpg")
 
@@ -48,5 +48,5 @@ if uploaded_file:
     predicted = predict_image(uploaded_file, vgg_model)
     st.image(uploaded_file)
 
-    st.text("Classification: " + predicted[0][0][1])
-    st.text("Accuracy: " + predicted[0][0][-1])
+    st.write("Classification: " + predicted[0][0][1])
+    st.write("Accuracy: " + predicted[0][0][-1])
