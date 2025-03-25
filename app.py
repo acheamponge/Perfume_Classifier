@@ -34,7 +34,7 @@ def predict_image(image_path, model):
     if label[0][0][-1] >= 0.5:
         return(label[0][0]) #just display top 2
 
-image = Image.open('./img/1.jpg')
+image = Image.open('./1.jpg')
 
 st.header("Perfume Classifier")
 
