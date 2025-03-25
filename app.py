@@ -10,10 +10,16 @@ from PIL import Image
 import requests
 from io import BytesIO
 import streamlit as st
+import pytesseract
 
 
 vgg_model = vgg16.VGG16(weights='imagenet')
 
+def extract_text_from_image(image_path):
+    image = Image.open(image_path)
+    text = pytesseract.image_to_string(image)
+    return text
+    
 def predict_image(image_path, model):
     original = Image.open(image_path)
 
@@ -52,3 +58,6 @@ if uploaded_file:
     if predicted:
         st.write("Classification: " + str(predicted[1]))
         st.write("Accuracy: " + str(predicted[-1]))
+
+        st.write("OCR Text: " + str(extract_text_from_image(uploaded_file)))
+
