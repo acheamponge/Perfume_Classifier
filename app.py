@@ -50,5 +50,5 @@ if uploaded_file:
     st.image(uploaded_file)
 
     if predicted:
-        st.write("Classification: " + str(predicted))
-        st.write("Accuracy: " + str(predicted))
+        st.write("Classification: " + str(predicted[0]))
+        st.write("Accuracy: " + str(predicted[0]))
