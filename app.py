@@ -53,11 +53,15 @@ uploaded_file = st.file_uploader("Choose an image file", type="jpg")
 
 if uploaded_file:
     predicted = predict_image(uploaded_file, vgg_model)
-    st.image(uploaded_file)
+    
 
     if predicted:
+        st.image(uploaded_file)
         st.write("Classification: " + str(predicted[1]))
         st.write("Accuracy: " + str(predicted[-1]))
 
         st.write("OCR Text: " + str(extract_text_from_image(uploaded_file)))
+
+    else:
+        st.write("Couldn't predict this perfume, please try another 1")
 
