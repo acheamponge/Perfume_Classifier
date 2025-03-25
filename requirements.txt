@@ -3,3 +3,4 @@ Pillow
 keras
 streamlit
 tensorflow-cpu
+pytesseract
