@@ -2,12 +2,4 @@ numpy
 Pillow
 keras
 streamlit
-
-
-
-
-
-
-
-
-
+tensorflow-cpu
