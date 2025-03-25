@@ -33,6 +33,7 @@ def predict_image(image_path, model):
     label = decode_predictions(predictions)
     if label[0][0][-1] >= 0.5:
         return(label[0][0]) #just display top 2
+    return 
 
 image = Image.open('./1.jpg')
 
@@ -48,5 +49,6 @@ if uploaded_file:
     predicted = predict_image(uploaded_file, vgg_model)
     st.image(uploaded_file)
 
-    st.write("Classification: " + predicted[0][0][1])
-    st.write("Accuracy: " + predicted[0][0][-1])
+    if predicted:
+        st.write("Classification: " + str(predicted))
+        st.write("Accuracy: " + str(predicted))
